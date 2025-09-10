@@ -1,7 +1,7 @@
 #function that creates a method
 
 def create_message(prefix, *args):
-    s = " "
+    s = str(prefix) + ": "
     for arg in args:
         s += str(arg) + " "
     print(s)
@@ -10,3 +10,5 @@ def create_message(prefix, *args):
 #calls a function
 
 create_message("Status", "Temp", 25, "Degree")
+
+create_message("Alert", "System", "is", "online")
