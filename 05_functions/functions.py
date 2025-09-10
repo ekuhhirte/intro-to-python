@@ -7,8 +7,21 @@ def create_message(prefix, *args):
     print(s)
     pass
 
-#calls a function
+def create_mes(*args, **kwargs):
+    # Find the key in kwargs
+    seperator = kwargs.get("Seperator", " ")
+    s = ""
+    for arg in args:
+        s += str(arg) + seperator
+    
+    return s[:-1]
+
+
+
+#Call a function
 
 create_message("Status", "Temp", 25, "Degree")
 
 create_message("Alert", "System", "is", "online")
+
+print(create_mes("a", "b", seperator = "-"))
