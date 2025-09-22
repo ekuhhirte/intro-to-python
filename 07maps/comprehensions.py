@@ -14,3 +14,9 @@ def long_upper_words(words):
 
 words = ["Polytechnic", "COP", "oop", "StudEnt"]
 print(long_upper_words(words))
+
+#return a dictionary mapping each word to its length)
+def word_lengths(words):
+    return{word: len(word) for word in words}
+
+print(word_lengths(words))
