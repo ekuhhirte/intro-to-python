@@ -14,3 +14,12 @@ hash3 = calculate_hash(key, "Pay me $100")
 
 print(hash1 == hash2)
 print(hash1 == hash3)
+
+# TODO
+# create two functions
+# def send_message(message_text) -> dict:
+# {"text": ..., "hash": hash_value}
+
+
+# def receive_message(message: dict)
+# Verify if the hash is valid for the message sent
