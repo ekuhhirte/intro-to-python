@@ -59,7 +59,15 @@ with ui.row().classes("w-full"):
             slider = ui.slider(min=1, max=10, value=5)
             slider.on("update:model-value", lambda: label_slider.set_text(f"Step: {slider.value}"))
     
+n1 = ui.number("Number 1", value = 0).classes("w-24")
+ui.label("+").classes("text-lg")
+n2 = ui.number("Number 2", value = 0).classes("w-24")
+ui.label("=").classes("text-lg")
+result = ui.label("0").classes("text-lg")
 
+#TODO Make the above work so that it works as an addition
+#TODO Make the above look good as well when spare time allows
+#TODO Extra Challenge: Allow the user to pick the operator to use
 
 ui.switch("Dark mode", on_change= lambda x: ui.dark_mode().enable() if x.value else ui.dark_mode().disable()) 
 
