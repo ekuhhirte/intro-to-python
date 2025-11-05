@@ -26,7 +26,7 @@ class State:
 
 
 def add_one():
-    State.count += 1
+    State.count += slider.value
     count_label.text = f"Count: {State.count}"
 
 def reset():
@@ -39,22 +39,30 @@ def reset():
 ui.label("Welcome to nicegui!").style("color: green; font-size: 40px")
 
 # Create an overall row for everything
-with ui.row():
-    # Create a card for the greeting
-    with ui.card():
-        input_field = ui.input("Enter your name")
-        ui.button("Greet Me", color = "green", on_click = greet)
+with ui.row().classes("w-full"):
+    with ui.column().classes("flex-1"):
+        # Create a card for the greeting
+        with ui.card().classes("h-65 w-full"):
+            input_field = ui.input("Enter your name")
+            ui.button("Greet Me", color = "green", on_click = greet)
 
-    # Create a card for the counter
-    with ui.card():
-        count_label = ui.label("Count: 0")
-        with ui.row().classes():
-            ui.button("Add one", color = "green", on_click = add_one)
-            ui.button("Reset Count", color = "red", on_click = reset)
+    with ui.column().classes("flex-1"):
+        # Create a card for the counter
+        with ui.card().classes("h-65 w-full"):
+            count_label = ui.label("Count: 0").classes("text-lg")
+            # Create a row for the buttons
+            with ui.row().classes():
+                ui.button("Add one", color = "green", on_click = add_one)
+                ui.button("Reset Count", color = "red", on_click = reset)
+            # creating a label slider
+            label_slider = ui.label("Step: 5").classes("text-lg")
+            slider = ui.slider(min=1, max=10, value=5)
+            slider.on("update:model-value", lambda: label_slider.set_text(f"Step: {slider.value}"))
+    
 
 
+ui.switch("Dark mode", on_change= lambda x: ui.dark_mode().enable() if x.value else ui.dark_mode().disable()) 
 
-# Create a row
 
 
 ui.run(title="Intro to nicegui")
