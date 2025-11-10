@@ -1,0 +1,11 @@
+git init - initalizes a new python repository
+
+git status - shows status of changes
+
+git add - add files to the staging area
+
+git commit - saves changes
+
+git log - shows commit history
+
+git diff <file> - shows unstaged changes
