@@ -9,3 +9,17 @@ git commit - saves changes
 git log - shows commit history
 
 git diff <file> - shows unstaged changes
+
+git restore <file> - discards changes for a file
+
+git branch - lists all branches
+
+git branch <name> - creates a new branch
+
+git checkout <name> - switch to a branch
+
+git checkout -b <name> - create and switch to that newly created branch
+
+git merge <name> - merge another branch into current
+
+git branch -d <name> - delete a branch (safe version)
