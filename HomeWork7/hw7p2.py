@@ -24,24 +24,26 @@ def reset_pair(i, j):
 def handle_click(button, id):
     global opened
     global matched
-    if len(opened) >= 2:
-        opened = []
+    if button.text == "": #checks to see if the button has already been clicked on or completed
+        if len(opened) >= 2: #resets opened back to empty if it was filled up on a previous run of this function
+            opened = []
     
-    button.text = f"{EMOJIS[id-1]}"
-    opened.append(id)
+        button.text = f"{EMOJIS[id-1]}"
+        opened.append(id)
 
-    if len(opened) > 1: #if you have two flipped cards
-        if EMOJIS[opened[0]-1] == EMOJIS[opened[1]-1]: #checks if the cards are the same
-            print(f"MATCHED, {EMOJIS[opened[0]-1]}, {EMOJIS[opened[1]-1]}")
-            matched.append(opened[0])
-            matched.append(opened[1])
-            if len(matched) == 16:
-                pass
-        else:
-            #print(f"RESET: {opened}") #debug code commented off
-            ui.timer(0.5, lambda: reset_pair(buttons[opened[0]-1], buttons[opened[1]-1]), once = True)
-             #pauses program execution for 0.5 second
-
+        if len(opened) > 1: #if you have two flipped cards
+            if EMOJIS[opened[0]-1] == EMOJIS[opened[1]-1]: #checks if the cards are the same
+                print(f"MATCHED, {EMOJIS[opened[0]-1]}, {EMOJIS[opened[1]-1]}")
+                matched.append(opened[0])
+                matched.append(opened[1])
+                if len(matched) == 16:
+                    ui.notify("You Win!") #notifies the user when they win
+            else:
+                #print(f"RESET: {opened}") #debug code commented off
+                ui.timer(0.5, lambda: reset_pair(buttons[opened[0]-1], buttons[opened[1]-1]), once = True)
+                #pauses program execution for 0.5 second
+    else:
+        ui.notify("Please click on one not already opened") 
 # Build 4x4 grid
 with ui.grid(columns=4).classes("h-200"):
     # TODO 4: Create 16 buttons
@@ -62,7 +64,7 @@ with ui.grid(columns=4).classes("h-200"):
     button15 = ui.button(on_click = lambda: handle_click(button15, 15)).classes("h-65, w-65")
     button16 = ui.button(on_click = lambda: handle_click(button16, 16)).classes("h-65, w-65")
 
-    buttons = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button15, button16]
+    buttons = [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11, button12, button13, button14, button15, button16]
     
 
 ui.run(title='Memory Game')
