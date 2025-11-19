@@ -1,0 +1,62 @@
+[
+    {
+        "campaignName": "2025 12 31 _ 2027 03 29 _40-60_EUR",
+        "campaignBudget": 397667,
+        "campaignSpent": 84946,
+        "user": {
+            "username": "sean37",
+            "name": "Jeffrey Hughes",
+            "email": "zsherman@example.org",
+            "address": "9670 Douglas Ports Apt. 148\nNorth Tracyhaven, NH 30921",
+            "age": 61
+        }
+    },
+    {
+        "campaignName": "2025 02 07 _ 2025 10 02 _30-45_GBP",
+        "campaignBudget": 593808,
+        "campaignSpent": 367935,
+        "user": {
+            "username": "sean37",
+            "name": "Jeffrey Hughes",
+            "email": "zsherman@example.org",
+            "address": "9670 Douglas Ports Apt. 148\nNorth Tracyhaven, NH 30921",
+            "age": 61
+        }
+    },
+    {
+        "campaignName": "2025 05 29 _ 2025 09 21 _20-40_GBP",
+        "campaignBudget": 558891,
+        "campaignSpent": 220029,
+        "user": {
+            "username": "sean37",
+            "name": "Jeffrey Hughes",
+            "email": "zsherman@example.org",
+            "address": "9670 Douglas Ports Apt. 148\nNorth Tracyhaven, NH 30921",
+            "age": 61
+        }
+    },
+    {
+        "campaignName": "2026 05 15 _ 2028 02 21 _30-35_USD",
+        "campaignBudget": 228652,
+        "campaignSpent": 177333,
+        "user": {
+            "username": "sean37",
+            "name": "Jeffrey Hughes",
+            "email": "zsherman@example.org",
+            "address": "9670 Douglas Ports Apt. 148\nNorth Tracyhaven, NH 30921",
+            "age": 61
+        }
+    },
+    {
+        "campaignName": "2026 01 12 _ 2026 08 01 _20-30_GBP",
+        "campaignBudget": 503172,
+        "campaignSpent": 22320,
+        "user": {
+            "username": "sean37",
+            "name": "Jeffrey Hughes",
+            "email": "zsherman@example.org",
+            "address": "9670 Douglas Ports Apt. 148\nNorth Tracyhaven, NH 30921",
+            "age": 61
+        }
+    }
+]
